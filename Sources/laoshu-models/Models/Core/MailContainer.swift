@@ -8,17 +8,17 @@
 
 #if os(iOS)
 import UIKit
-public typealias ViewController = UIViewController
+public typealias TargetedViewController = UIViewController
 #elseif os(macOS)
 import AppKit
-public typealias ViewController = NSViewController
+public typealias TargetedViewController = NSViewController
 #endif
 
 public struct MailContainer {
     public let url: URL
-    public let controller: ViewController?
+    public let controller: TargetedViewController?
     
-    public init(url: URL, controller: ViewController?) {
+    public init(url: URL, controller: TargetedViewController?) {
         self.url = url
         self.controller = controller
     }
