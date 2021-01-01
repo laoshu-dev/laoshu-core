@@ -6,7 +6,7 @@
 //  Copyright © 2020 Anton Tkalikov. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 public enum ContentScale: Int, CaseIterable {
     case small = 0
