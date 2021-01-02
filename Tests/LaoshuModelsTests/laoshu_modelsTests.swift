@@ -1,5 +1,5 @@
 import XCTest
-@testable import laoshu_models
+@testable import LaoshuModels
 
 final class laoshu_modelsTests: XCTestCase {
     func testExample() {

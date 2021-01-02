@@ -4,19 +4,19 @@
 import PackageDescription
 
 let package = Package(
-    name: "LaoshuModels",
+    name: "laoshu-models",
     products: [
         .library(
             name: "LaoshuModels",
             type: .dynamic,
-            targets: ["laoshu-models"]),
+            targets: ["LaoshuModels"]),
     ],
     targets: [
         .target(
-            name: "laoshu-models",
+            name: "LaoshuModels",
             dependencies: []),
         .testTarget(
-            name: "laoshu-modelsTests",
-            dependencies: ["laoshu-models"]),
+            name: "LaoshuModelsTests",
+            dependencies: ["LaoshuModels"]),
     ]
 )
