@@ -3,7 +3,9 @@ import Foundation
 public struct TextConverter {
     private let replaceCollection = ReplaceCollection()
     
-    func dslToHtml(_ dsl: String) -> String {
+    public init() { }
+    
+    public func dslToHtml(_ dsl: String) -> String {
         replaceCollection.replacedTags(in: dsl)
     }
 }
