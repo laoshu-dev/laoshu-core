@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Antonym: Hashable, Equatable {
+public struct Antonym: Codable, Hashable, Equatable {
     public let content: String
     public let opposite: String
     

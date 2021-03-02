@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Word {
+public struct Word: Codable {
     public let original: String
     public let transcription: String?
     public let description: String
