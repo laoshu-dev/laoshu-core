@@ -4,18 +4,18 @@
 import PackageDescription
 
 let package = Package(
-    name: "laoshu-models",
+    name: "laoshu-core",
     products: [
         .library(
-            name: "LaoshuModels",
-            targets: ["LaoshuModels"]),
+            name: "LaoshuCore",
+            targets: ["LaoshuCore"]),
     ],
     targets: [
         .target(
-            name: "LaoshuModels",
+            name: "LaoshuCore",
             dependencies: []),
         .testTarget(
-            name: "LaoshuModelsTests",
-            dependencies: ["LaoshuModels"]),
+            name: "LaoshuCoreTests",
+            dependencies: ["LaoshuCore"]),
     ]
 )

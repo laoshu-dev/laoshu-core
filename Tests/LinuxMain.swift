@@ -1,7 +1,7 @@
 import XCTest
 
-import laoshu_modelsTests
+import laoshu_coreTests
 
 var tests = [XCTestCaseEntry]()
-tests += laoshu_modelsTests.allTests()
+tests += laoshu_coreTests.allTests()
 XCTMain(tests)

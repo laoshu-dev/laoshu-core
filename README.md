@@ -1,1 +1,1 @@
-# laoshu-models
+# laoshu-core
