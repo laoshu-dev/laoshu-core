@@ -9,6 +9,6 @@ struct ColorTag: IdentifableTag, RegexReplaceableTag {
     )
     
     var template: String {
-        "<span\(identifier.tagIdentifierValue)>$2</a>"
+        "<span\(identifier.tagIdentifierValue)>$2</span>"
     }
 }

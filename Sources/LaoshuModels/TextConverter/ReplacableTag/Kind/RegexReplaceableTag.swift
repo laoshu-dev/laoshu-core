@@ -7,6 +7,8 @@ protocol RegexReplaceableTag: ReplacableTag {
 
 extension RegexReplaceableTag {
     func replacedTags(in string: String) -> String {
-        string.replacingGroups(matching: regex, with: template)
+        guard let swiftyRange = string.range(of: string) else { return string }
+        let range = NSRange(swiftyRange, in: string)
+        return regex.stringByReplacingMatches(in: string, options: [], range: range, withTemplate: template)
     }
 }
