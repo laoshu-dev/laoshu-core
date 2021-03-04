@@ -1,4 +1,7 @@
 import Foundation
+#if os(Linux)
+    import CoreFoundation
+#endif
 
 extension String {
     public var cleaned: String {
