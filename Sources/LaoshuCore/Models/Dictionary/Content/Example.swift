@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Example {
+public struct Example: Codable {
     public let original: String
     public let example: String
     
