@@ -1,6 +1,7 @@
 import Foundation
 #if os(Linux)
     import CoreFoundation
+    import Glibc
 #endif
 
 extension String {
@@ -16,25 +17,16 @@ extension String {
         return self.removingPercentEncoding ?? ""
     }
     
-    public var byWords: [String] {
-        let options: NSLinguisticTagger.Options = [.omitWhitespace, .omitPunctuation, .omitOther]
-        let schemes = [NSLinguisticTagScheme.lexicalClass]
-        let tagger = NSLinguisticTagger(tagSchemes: schemes, options: Int(options.rawValue))
-        let range = NSMakeRange(0, (self as NSString).length)
-        tagger.string = self
+    public var byEnumeratedWords: [String] {
+        guard let range = self.range(of: self) else { return [] }
+        var words: [String] = []
         
-        var tokens: [String] = []
-        tagger.enumerateTags(in: range, scheme: .lexicalClass, options: options) { (tag, tokenRange, _, _) in
-            let token = (self as NSString).substring(with: tokenRange)
-            tokens.append(token)
+        self.enumerateSubstrings(in: range, options: .byWords) { (substring, _, _, _) in
+            if let string = substring, !string.cleaned.isEmpty {
+                words.append(string)
+            }
         }
-        return tokens
-    }
-    
-    public func guessLanguage() -> String? {
-        let length = self.utf16.count
-        let languageCode = CFStringTokenizerCopyBestStringLanguage(self as CFString, CFRange(location: 0, length: length)) as String? ?? ""
-        let locale = Locale(identifier: languageCode)
-        return locale.localizedString(forLanguageCode: languageCode)
+        
+        return words
     }
 }
